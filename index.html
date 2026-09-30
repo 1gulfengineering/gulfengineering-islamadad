@@ -3,140 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gulf Engineering Islamabad - Fridge & AC Repair</title>
+<meta name="description" content="Gulf Engineering Islamabad - HVAC, refrigerator, water cooler, water dispenser, plumbing, geyser and electrical services in Islamabad.">
+<meta name="keywords" content="HVAC Islamabad, AC repair Islamabad, refrigerator repair Islamabad, plumbing Islamabad, geyser service Islamabad, electrical services Islamabad, Gulf Engineering Islamabad">
+<title>Gulf Engineering Islamabad | HVAC & Maintenance Services</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-body { background: #f4f4f4; color: #333; line-height: 1.6; }
+:root{
+  --navy:#09263d; --blue:#0b78b5; --cyan:#11b8d4; --light:#f4f9fc;
+  --dark:#10202e; --white:#fff; --muted:#607486; --shadow:0 12px 35px rgba(9,38,61,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.topbar{background:var(--navy);color:#fff;font-size:14px;padding:9px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.08)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:23px;font-weight:800;color:var(--navy)}
+.logo span{color:var(--blue)}
+nav{display:flex;gap:25px;align-items:center}
+nav a{font-weight:600;color:#263f52}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:700;border:0;cursor:pointer}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#075f8f}
+.btn-outline{border:2px solid var(--blue);color:var(--blue)}
+.menu{display:none;font-size:28px;cursor:pointer}
+.hero{background:linear-gradient(135deg,#06253b 0%,#0b5f87 55%,#0eb6c9 100%);color:#fff;padding:90px 0}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}
+.badge{display:inline-block;background:rgba(255,255,255,.14);padding:8px 14px;border-radius:30px;margin-bottom:18px;font-weight:700}
+.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.05;margin-bottom:20px}
+.hero h1 span{color:#79e8f2}
+.hero p{font-size:19px;max-width:650px;color:#e4f6fb;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-primary{background:#fff;color:var(--navy)}
+.hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:30px;border-radius:22px;backdrop-filter:blur(8px)}
+.hero-card h3{font-size:23px;margin-bottom:16px}
+.hero-card li{list-style:none;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.hero-card li:last-child{border:0}
+section{padding:78px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 45px}
+.section-head h2{font-size:38px;color:var(--navy);margin-bottom:10px}
+.section-head p{color:var(--muted)}
+.services{background:var(--light)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:16px;padding:28px 22px;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-5px)}
+.icon{width:54px;height:54px;border-radius:14px;background:#e7f7fb;display:grid;place-items:center;font-size:28px;margin-bottom:17px}
+.card h3{color:var(--navy);margin-bottom:8px}
+.card p{color:var(--muted);font-size:14px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-box{background:linear-gradient(145deg,#eaf8fc,#f7fbfd);padding:35px;border-radius:24px}
+.about-box .big{font-size:55px;font-weight:900;color:var(--blue)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.checks div{font-weight:600;color:#24475d}
+.contact{background:var(--navy);color:#fff}
+.contact .section-head h2{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);padding:28px;border-radius:18px}
+.contact-item{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.contact-item:last-child{border:0}
+.contact-item small{display:block;color:#9ec2d5;margin-bottom:3px}
+.contact-item a{font-size:18px;font-weight:700}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+footer{background:#061b2b;color:#a9c2d0;padding:25px 0;text-align:center;font-size:14px}
+.float-wa{position:fixed;right:20px;bottom:20px;background:#20b95a;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 8px 25px rgba(0,0,0,.25);z-index:150}
+@media(max-width:850px){
+  nav{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+  nav.show{display:flex}.menu{display:block}
+  .hero-grid,.about,.contact-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+  .topbar .container{justify-content:center}
+  .hero{padding:65px 0}.hero p{font-size:17px}
+  section{padding:58px 0}.section-head h2{font-size:31px}
+  .grid{grid-template-columns:1fr}
+  .checks{grid-template-columns:1fr}
+  .nav{height:65px}.logo{font-size:19px}
+}
+</style>
+</head>
+<body>
 
-/* Header */
-header {
-  background: #0B3D91;
-  color: white;
-  padding: 15px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-.header-inner { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-.logo { font-size: 20px; font-weight: bold; }
-.logo span { color: #FF6B00; }
-.call-btn-header {
-  background: #FF6B00;
-  color: white;
-  padding: 8px 18px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-}
+<div class="topbar">
+  <div class="container">
+    <span>📍 Abbpara Market, Islamabad</span>
+    <span>📞 0313-7055035 &nbsp; | &nbsp; 0319-7484191 &nbsp; | &nbsp; 0316-7585568</span>
+  </div>
+</div>
 
-/* Hero */
-.hero {
-  background: linear-gradient(135deg, #0B3D91 0%, #1e5bc6 100%);
-  color: white;
-  text-align: center;
-  padding: 70px 20px;
-}
-.hero h1 { font-size: 32px; margin-bottom: 15px; }
-.hero p { font-size: 18px; margin-bottom: 25px; opacity: 0.95; }
-.hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-.btn {
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.btn-call { background: #0B3D91; color: white; border: 2px solid white; }
-.btn-call:hover { background: white; color: #0B3D91; }
-.btn-wa { background: #25D366; color: white; }
-.btn-wa:hover { background: #1da851; }
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">Gulf <span>Engineering</span></a>
+    <div class="menu" onclick="document.querySelector('nav').classList.toggle('show')">☰</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="https://wa.me/923137055035" target="_blank">WhatsApp</a>
+    </nav>
+  </div>
+</header>
 
-/* Section */
-section { padding: 50px 20px; max-width: 1100px; margin: auto; }
-.section-title { text-align: center; font-size: 26px; color: #0B3D91; margin-bottom: 30px; }
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">Professional Repair & Maintenance Services</div>
+      <h1>Gulf Engineering <span>Islamabad</span></h1>
+      <p>Reliable HVAC, refrigeration, plumbing, geyser and electrical services for homes, offices, shops and commercial facilities in Islamabad.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+923137055035">📞 Call Now</a>
+        <a class="btn btn-outline" style="border-color:#fff;color:#fff" href="https://wa.me/923137055035" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Our Main Services</h3>
+      <ul>
+        <li>❄️ HVAC & AC Services</li>
+        <li>🧊 Refrigerator Services</li>
+        <li>💧 Water Cooler & Dispenser</li>
+        <li>🔧 Plumbing Services</li>
+        <li>🔥 Geyser Service</li>
+        <li>⚡ Electrical Services</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-/* Features */
-.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-.feature-card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  border-top: 4px solid #FF6B00;
-}
-.feature-card h3 { color: #0B3D91; font-size: 16px; }
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Our Services</h2>
+      <p>Complete maintenance and repair solutions from one trusted team.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="icon">❄️</div><h3>HVAC</h3><p>Air conditioning, HVAC maintenance, repair and related services.</p></div>
+      <div class="card"><div class="icon">🧊</div><h3>Refrigerator</h3><p>Refrigerator inspection, repair, maintenance and troubleshooting.</p></div>
+      <div class="card"><div class="icon">💧</div><h3>Water Cooler</h3><p>Water cooler service, maintenance and repair solutions.</p></div>
+      <div class="card"><div class="icon">🚰</div><h3>Water Dispenser</h3><p>Water dispenser repair and routine maintenance services.</p></div>
+      <div class="card"><div class="icon">🔧</div><h3>Plumbing</h3><p>General plumbing repair, maintenance and installation work.</p></div>
+      <div class="card"><div class="icon">🔥</div><h3>Geyser Service</h3><p>Geyser inspection, repair and maintenance for reliable operation.</p></div>
+      <div class="card"><div class="icon">⚡</div><h3>Electrical</h3><p>Electrical repair and maintenance services for residential and commercial needs.</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3>Maintenance</h3><p>Practical maintenance support for equipment and building services.</p></div>
+    </div>
+  </div>
+</section>
 
-/* Services */
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.service-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: 0.3s;
-}
-.service-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-.service-card .icon { font-size: 40px; margin-bottom: 10px; }
-.service-card h3 { color: #0B3D91; margin-bottom: 8px; }
-.service-card p { font-size: 14px; color: #666; }
+<section id="about">
+  <div class="container about">
+    <div>
+      <div class="section-head" style="text-align:left;margin:0 0 15px">
+        <h2>About Gulf Engineering</h2>
+      </div>
+      <p>Gulf Engineering Islamabad provides repair and maintenance services covering HVAC, refrigeration, water equipment, plumbing, geysers and electrical systems.</p>
+      <div class="checks">
+        <div>✓ Multiple technical services</div>
+        <div>✓ Residential & commercial</div>
+        <div>✓ Islamabad based</div>
+        <div>✓ Easy phone & WhatsApp contact</div>
+      </div>
+    </div>
+    <div class="about-box">
+      <div class="big">7+</div>
+      <h3>Service Categories</h3>
+      <p>HVAC • Refrigerator • Water Cooler • Water Dispenser • Plumbing • Geyser • Electrical</p>
+    </div>
+  </div>
+</section>
 
-/* About */
-.about-box {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  font-size: 16px;
-  line-height: 1.8;
-}
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2>Contact Us</h2>
+      <p>Contact Gulf Engineering Islamabad for service and maintenance inquiries.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-item"><small>Location</small><strong>Abbpara Market, Islamabad</strong></div>
+        <div class="contact-item"><small>Phone 1</small><a href="tel:+923137055035">0313-7055035</a></div>
+        <div class="contact-item"><small>Phone 2</small><a href="tel:+923197484191">0319-7484191</a></div>
+        <div class="contact-item"><small>Phone 3</small><a href="tel:+923167585568">0316-7585568</a></div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="tel:+923137055035">Call Now</a>
+          <a class="btn" style="background:#20b95a;color:#fff" href="https://wa.me/923137055035" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Need a service?</h3>
+        <p style="margin-top:10px;color:#c6dce6">Send us a message on WhatsApp with your required service and location.</p>
+        <div style="margin-top:25px">
+          <a class="btn btn-primary" href="https://wa.me/923137055035?text=Hello%20Gulf%20Engineering%2C%20I%20need%20a%20service." target="_blank">Message on WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-/* Contact */
-.contact-box {
-  background: #0B3D91;
-  color: white;
-  padding: 40px 25px;
-  border-radius: 12px;
-  text-align: center;
-}
-.contact-box h2 { margin-bottom: 25px; color: #FF6B00; }
-.contact-item {
-  font-size: 18px;
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.contact-item a { color: white; text-decoration: none; }
-.contact-item a:hover { color: #FF6B00; }
+<footer>
+  <div class="container">© 2026 Gulf Engineering Islamabad. All rights reserved.</div>
+</footer>
 
-/* Floating WhatsApp */
-.float-wa {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  z-index: 999;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
+<a class="float-wa" href="https://wa.me/923137055035" target="_blank" aria-label="WhatsApp">💬</a>
+
+<script>
+document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => document.querySelector('nav').classList.remove('show')));
+</script>
+</body>
+</html>
